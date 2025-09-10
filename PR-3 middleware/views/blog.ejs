@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #333;
+        }
+
+        /* Navbar */
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background: #0072ff;
+            padding: 15px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 15px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #fff;
+            color: #0072ff;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(rgba(0, 114, 255, 0.6), rgba(0, 198, 255, 0.6)),
+                url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1350&q=80");
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        /* Content */
+        .content {
+            max-width: 1000px;
+            margin: 50px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .content h2 {
+            color: #0072ff;
+            margin-bottom: 20px;
+        }
+
+        .content p {
+            line-height: 1.6;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            background: #0072ff;
+            color: #fff;
+            padding: 15px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="about">About</a>
+        <a href="product">Product</a>
+        <a href="blog" class="active">Blog</a>
+        <a href="contact">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>Welcome to My Website</h1>
+        <p>Explore amazing pages with a modern design</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="content">
+        <h2>About This Project</h2>
+        <p>
+            This is a clean and modern homepage design built using only HTML and CSS.
+            The navigation bar highlights the current page, the hero section has a background image with a color
+            overlay,
+            and the content area is simple and elegant.
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 My Website | All Rights Reserved
+    </footer>
+</body>
+
+</html>

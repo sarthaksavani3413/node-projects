@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f4f8fb;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: linear-gradient(90deg, #0072ff, #00c6ff);
+            padding: 15px 40px;
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            background: #fff;
+            color: #0072ff;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(rgba(0, 114, 255, 0.7), rgba(0, 198, 255, 0.7)),
+                url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80") center/cover no-repeat;
+            color: #fff;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .about-section {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            align-items: center;
+        }
+
+        .about-text {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            animation: fadeInUp 1s ease;
+        }
+
+        .about-text h2 {
+            color: #0072ff;
+            margin-bottom: 15px;
+        }
+
+        .about-text p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            animation: fadeIn 1.2s ease;
+        }
+
+        footer {
+            text-align: center;
+            background: #0072ff;
+            color: #fff;
+            padding: 15px;
+            margin-top: 60px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="about">About</a>
+        <a href="product">Products</a>
+        <a href="blog">Blog</a>
+        <a href="contact">Contact</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>About Us</h1>
+        <p>We build modern, creative, and user-friendly digital experiences that make an impact.</p>
+    </section>
+
+    <!-- About Content -->
+    <section class="about-section">
+        <div class="about-text">
+            <h2>Who We Are</h2>
+            <p>
+                We are a passionate team of designers and developers working together to create outstanding digital
+                products.
+            </p>
+            <p>
+                Our mission is to combine creativity with technology and deliver solutions that inspire, engage, and
+                perform.
+            </p>
+        </div>
+
+        <div class="about-image">
+            <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80"
+                alt="Team Work">
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        © 2025 My Website | All Rights Reserved
+    </footer>
+
+</body>
+
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome | Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.05);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .container h1 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+            color: #ffffff;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            background-color: #ffffff;
+            color: #2c5364;
+            font-weight: bold;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            background-color: #00c6ff;
+            color: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 198, 255, 0.4);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to Blog Page</h1>
+        <div class="nav-links">
+            <a href="/">Index</a>
+            <a href="about">About</a>
+            <a href="blog">Blog</a>
+            <a href="contact">Contact</a>
+            <a href="product">Product</a>
+        </div>
+    </div>
+</body>
+
+</html>

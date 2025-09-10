@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Attractive UI</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f4f6fb;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navbar */
+        header {
+            background: #fff;
+            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #2575fc;
+        }
+
+        nav a {
+            color: #444;
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 15px;
+            font-weight: 500;
+            padding: 6px 12px;
+            border-radius: 6px;
+            transition: 0.3s;
+        }
+
+        nav a:hover,
+        nav a.active {
+            background: #2575fc;
+            color: #fff;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 60px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .container h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .container p {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 15px;
+        }
+
+        /* Cards */
+        .card-box {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .card {
+            background: linear-gradient(135deg, #ffffff, #f1f6ff);
+            border-radius: 14px;
+            padding: 30px 20px;
+            width: 240px;
+            text-align: center;
+            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+            transition: 0.3s ease;
+        }
+
+        .card a {
+            text-decoration: none;
+        }
+
+        .card:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 22px rgba(0, 0, 0, 0.12);
+        }
+
+        .card i {
+            font-size: 36px;
+            color: #2575fc;
+            margin-bottom: 14px;
+        }
+
+        .card h3 {
+            font-size: 19px;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.5;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: auto;
+            background: #fff;
+            text-align: center;
+            padding: 18px;
+            font-size: 14px;
+            color: #777;
+            border-top: 1px solid #e5e5e5;
+        }
+    </style>
+    
+</head>
+
+<body>
+
+    <header>
+        <h1>My Website</h1>
+        <nav>
+            <a href="/" class="active"><i class="fas fa-home"></i> Home</a>
+            <a href="/about"><i class="fas fa-user"></i> About</a>
+            <a href="/product"><i class="fas fa-box"></i> Products</a>
+            <a href="/blog"><i class="fas fa-blog"></i> Blog</a>
+            <a href="/contact"><i class="fas fa-envelope"></i> Contact</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Welcome to Our Website 🌐</h2>
+        <p>Explore our sections below and discover more about us.</p>
+        <div class="card-box">
+            <div class="card">
+                <i class="fas fa-user"></i>
+                <a href="/about">
+                    <h3>About Us</h3>
+                </a>
+                <p>Learn more about our team, our journey, and our values.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-box"></i>
+                <a href="/product">
+                    <h3>Products</h3>
+                </a>
+                <p>Check out our latest offerings, deals, and collections.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-blog"></i>
+                <a href="/blog">
+                    <h3>Blog</h3>
+                </a>
+                <p>Read the latest news, articles, and insights from us.</p>
+            </div>
+            <div class="card">
+                <i class="fas fa-envelope"></i>
+                <a href="/contact">
+                    <h3>Contact Us</h3>
+                </a>
+                <p>Get in touch with our team anytime, anywhere.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        © 2025 My Website. All rights reserved.
+    </footer>
+
+</body>
+
+</html>
