@@ -1,0 +1,77 @@
+<%- include('sidebar') %>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Edit Book</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    </head>
+
+    <body class="bg-light">
+        <div class="container mt-5">
+            <div class="card shadow-sm">
+                <div class="card-header bg-warning">
+                    <h4>Edit Book</h4>
+                </div>
+                <div class="card-body">
+                    <form action="/update/<%= task._id %>" method="POST" enctype="multipart/form-data">
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">Author</label>
+                                <input type="text" name="author" value="<%= task.author %>"
+                                    class="form-control shadow-none">
+                            </div>
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">Title</label>
+                                <input type="text" name="title" value="<%= task.title %>"
+                                    class="form-control shadow-none">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">Genre</label>
+                                <select class="form-select shadow-none" id="genre" name="genre">
+                                    <option disabled <%=!task.genre ? "selected" : "" %>>Select genre</option>
+                                    <option value="Fantasy" <%=task.genre==="Fantasy" ? "selected" : "" %>>Fantasy
+                                    </option>
+                                    <option value="Science Fiction" <%=task.genre==="Science Fiction" ? "selected" : ""
+                                        %>>Science Fiction</option>
+                                    <option value="Romance" <%=task.genre==="Romance" ? "selected" : "" %>>Romance
+                                    </option>
+                                    <option value="Mystery" <%=task.genre==="Mystery" ? "selected" : "" %>>Mystery
+                                    </option>
+                                    <option value="Horror" <%=task.genre==="Horror" ? "selected" : "" %>>Horror</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3 col-md-6">
+                                <label class="form-label">Total Books</label>
+                                <input type="number" name="total" value="<%= task.total %>"
+                                    class="form-control shadow-none">
+                            </div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Description</label>
+                            <textarea name="description"
+                                class="form-control shadow-none"><%= task.description %></textarea>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Update Image</label>
+                            <input type="file" name="image" class="form-control shadow-none">
+                            <img src="<%= task.image %>" width="80" class="mt-2">
+                        </div>
+
+                        <div class="text-center">
+                            <button class="btn btn-warning px-4">Update Book</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    </html>
