@@ -1,0 +1,176 @@
+<%- include('header') %>
+    <div class="page-wrapper">
+        <div class="page-breadcrumb">
+            <div class="row">
+                <div class="col-12 d-flex no-block align-items-center">
+                    <h4 class="page-title">Admin</h4>
+                    <div class="ml-auto text-right">
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                <li class="breadcrumb-item active" aria-current="page">Library</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ============================================================== -->
+        <!-- End Bread crumb and right sidebar toggle -->
+        <!-- ============================================================== -->
+        <!-- ============================================================== -->
+        <!-- Container fluid  -->
+        <!-- ============================================================== -->
+        <div class="container-fluid">
+            <!-- ============================================================== -->
+            <!-- Start Page Content -->
+            <!-- ============================================================== -->
+            <% let name=admindata.name.split(" ") %>
+                <div class=" row">
+                <div class="col-md-6">
+                    <div class="card">
+                        <form class="form-horizontal" method="post" action="/admin/updateadmin/<%= admindata._id %>"
+                            enctype="multipart/form-data">
+                            <div class="card-body">
+                                <h4 class="card-title">Admin Edit Info</h4>
+                                <div class="form-group row">
+                                    <label for="fname" class="col-sm-3 text-right control-label col-form-label">First
+                                        Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="fname" value="<%= name[0]%>" class="form-control"
+                                            id="fname" placeholder="First Name Here">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lname" class="col-sm-3 text-right control-label col-form-label">Last
+                                        Name</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="lname" value="<%= name[1]%>" class="form-control"
+                                            id="lname" placeholder="Last Name Here">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lname"
+                                        class="col-sm-3 text-right control-label col-form-label">Email</label>
+                                    <div class="col-sm-9">
+                                        <input type="text" name="email" value="<%= admindata.email%>"
+                                            class="form-control" id="lname" placeholder="email Here">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="lname"
+                                        class="col-sm-3 text-right control-label col-form-label">Password</label>
+                                    <div class="col-sm-9">
+                                        <input type="password" name="password" class="form-control" id="lname"
+                                            placeholder="Password Here">
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Form Elements</h5>
+                                    <div class="form-group row">
+                                        <% var city=["surat","vapi","mumbai","jaipur"] %>
+                                            <label class="col-md-3 m-t-15">Select City</label>
+                                            <div class="col-md-9">
+                                                <select name="city" class="select2 form-control custom-select"
+                                                    style="width: 100%; height:36px;">
+                                                    <option>Select city</option>
+                                                    <% city.map((val,index)=>{ %>
+                                                        <option value="<%= val%>" <% if(val==admindata.city){%> <%='selected'%><%}%>><%= val%>
+                                                        </option>
+                                                        <% }) %>
+                                                </select>
+                                            </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label class="col-md-3">Gender</label>
+                                        <div class="col-md-9">
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input"
+                                                    id="customControlValidation1" name="gender" value="Male" <%
+                                                    if(admindata.gender=='Male' ){ %>
+                                                <%= 'checked' %>
+                                                    <%}%>>
+                                                        <label class="custom-control-label"
+                                                            for="cus
+                                                            tomControlValidation1">Male</label>
+                                            </div>
+                                            <div class="custom-control custom-radio">
+                                                <input type="radio" class="custom-control-input"
+                                                    id="customControlValidation2" name="gender" value="Female" <%
+                                                    if(admindata.gender=='Female' ){ %>
+                                                <%= 'checked' %>
+                                                    <%}%>>
+                                                        <label class="custom-control-label"
+                                                            for="customControlValidation2">Female</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3">Qualification</label>
+                                        <div class="col-md-9">
+                                            <div class="custom-control custom-checkbox mr-sm-2">
+                                                <input type="checkbox" name="qualification" value="10Th"
+                                                    class="custom-control-input" id="customControlAutosizing1" <%
+                                                    if(admindata.qualification.includes('10Th')) { %> checked <% } %> >
+                                                    <label class="custom-control-label"
+                                                        for="customControlAutosizing1">10Th</label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox mr-sm-2">
+                                                <input type="checkbox" name="qualification" value="11Th"
+                                                    class="custom-control-input" id="customControlAutosizing2" <%
+                                                    if(admindata.qualification.includes('11Th')) { %> checked <% } %> >
+                                                    <label class="custom-control-label"
+                                                        for="customControlAutosizing2">11Th</label>
+                                            </div>
+
+                                            <div class="custom-control custom-checkbox mr-sm-2">
+                                                <input type="checkbox" name="qualification" value="12Th"
+                                                    class="custom-control-input" id="customControlAutosizing3" <%
+                                                    if(admindata.qualification.includes('12Th')) { %> checked <% } %> >
+                                                    <label class="custom-control-label"
+                                                        for="customControlAutosizing3">12Th</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-3">File Upload</label>
+                                        <div class="col-md-9">
+                                            <div class="custom-file">
+                                                <input type="file" name="profile" class="custom-file-input"
+                                                    id="validatedCustomFile">
+                                                <label class="custom-file-label" for="validatedCustomFile"
+                                                    name="profile">Choose file...</label>
+                                                <img src="<%= admindata.profile%>"
+                                                    style="margin-top: 10px; margin-bottom: 50px; height: 70px; width: 70px;"
+                                                    alt="">
+                                                <div class="invalid-feedback">Example invalid custom file feedback</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group row">
+                                        <label for="cono1"
+                                            class=" text-right control-label col-form-label">Message</label>
+                                        <div class="col-sm-9">
+                                            <textarea class="form-control" name="message">
+                                                <%= admindata.message %>
+                                            </textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="border-top">
+                                    <div class="card-body">
+                                        <button type="submit" class="btn btn-primary">Edit</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+        </div>
+    </div>
+    <%- include('footer') %>
