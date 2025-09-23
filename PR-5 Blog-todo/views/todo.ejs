@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<div class="navbar-container">
+    <div class="form-container">
+        <h2>Add New Task</h2>
+        <form action="/addtask" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input type="text" id="title" name="Title" placeholder="Enter task title">
+            </div>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="Description" rows="3" placeholder="Write task description"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <select id="category" name="category">
+                    <option value="" disabled selected>Select category</option>
+                    <option value="technology">Technology</option>
+                    <option value="lifestyle">Lifestyle</option>
+                    <option value="health">Health</option>
+                    <option value="travel">Travel</option>
+                    <option value="education">Education</option>
+                    <option value="food">Food</option>
+                    <option value="finance">Finance</option>
+                    <option value="entertainment">Entertainment</option>
+                    <option value="sports">Sports</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="image">Upload Image</label>
+                <input type="file" id="image" name="image">
+            </div>
+            <button type="submit">Add Task</button>
+        </form>
+    </div>
+</div>
+
+</body>
+
+</html>
