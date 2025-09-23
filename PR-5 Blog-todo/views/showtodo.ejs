@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+    <div align="center">
+        <div class="navbar">
+            <div class="logo">
+                MyApp
+            </div>
+
+            <a href="/addtask" class="btn-add">+ Add Task</a>
+        </div>
+
+        <div class="card-container">
+            <% alltaskdata.map((v,i)=>{ %>
+                <div class="card">
+                    <img src="<%= v.image %>" alt="task image">
+                    <div class="card-content">
+                        <span class="tag">
+                            <%= v.category %>
+                        </span>
+                        <h3>
+                            <%= v.Title %>
+                        </h3>
+                        <p>
+                            <%= v.Description.substring(0, 100) %>
+                        </p>
+                        <a href="/task/<%= v.id %>" class="read-more-btn">Read more</a>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+        <br>
+    </div>
+</body>
+
+</html>
