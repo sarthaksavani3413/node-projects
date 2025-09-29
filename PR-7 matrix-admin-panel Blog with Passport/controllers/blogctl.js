@@ -1,0 +1,116 @@
+const blogmodel = require("../models/blogmodel");
+const fs = require("fs");
+const path = require("path");
+
+// Add Blog Page
+module.exports.addblog = (req, res) => {
+    try {
+        // let admin = req.cookies.admin;
+        res.render("blog/addBlog");
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+// Insert Blog
+module.exports.insertblog = async (req, res) => {
+    try {
+        console.log("image uploaded", req.file);
+
+        if (req.file) {
+            req.body.image = "/uploads/blogimages/" + req.file.filename;   // ✅ पूरा path DB में
+        } else {
+            req.body.image = "";
+            console.log("No image uploaded");
+        }
+
+        await blogmodel.create(req.body);
+        req.flash("success", "Blog Add And View Successfully");
+        res.redirect("/blog/viewBlog");
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+// View Blogs
+module.exports.viewblog = async (req, res) => {
+    try {
+        // let admin = req.cookies.admin;
+        const data = await blogmodel.find();
+        res.render("blog/viewBlog", { data });
+    } catch (err) {
+        console.log(err);
+    }
+};
+
+// Delete Blog
+module.exports.deleteblog = async (req, res) => {
+    try {
+        console.log("Deleting blog id:", req.params.id);
+
+        let blog = await blogmodel.findById(req.params.id);
+        if (blog && blog.image) {
+            try {
+                let imagePath = path.join(__dirname, "..", blog.image);
+                fs.unlinkSync(imagePath);
+                console.log("Image deleted from server");
+            } catch (err) {
+                console.log("Image not found on server");
+            }
+        }
+
+        let deletedBlog = await blogmodel.findByIdAndDelete(req.params.id);
+        if (deletedBlog) {
+            console.log("✅ Blog Deleted Successfully");
+        } else {
+            console.log("Blog not deleted");
+        }
+        return res.redirect("/blog/viewBlog");
+    } catch (err) {
+        console.log(err);
+        return res.redirect("/blog/viewBlog");
+    }
+};
+
+// Show Edit Page
+module.exports.editBlogPage = async (req, res) => {
+    try {
+        // let admin = req.cookies.admin;
+        let blog = await blogmodel.findById(req.params.id);
+        res.render("blog/editBlog", { blog });
+    } catch (err) {
+        console.log("Error in editBlogPage:", err);
+        res.redirect("/blog/viewBlog");
+    }
+};
+
+// Update Blog
+module.exports.updateBlog = async (req, res) => {
+    try {
+        let updateData = req.body;   // ✅ सीधा form data
+
+        if (req.file) {
+            updateData.image = "/uploads/blogimages/" + req.file.filename; // ✅ पूरा path DB में
+        }
+
+        await blogmodel.findByIdAndUpdate(req.params.id, updateData);
+
+        console.log("✅ Blog updated successfully");
+        res.redirect("/blog/viewBlog");
+    } catch (err) {
+        console.log("Error in updateBlog:", err);
+        res.redirect("/blog/viewBlog");
+    }
+};
+
+// Show single blog detail
+module.exports.detailBlog = async (req, res) => {
+    try {
+        // let admin = req.cookies.admin;
+        let blog = await blogmodel.findById(req.params.id);
+        res.render("blog/detailBlog", { blog });
+    } catch (err) {
+        console.log("Error in detailBlog:", err);
+        res.redirect("/blog/viewBlog");
+    }
+};
